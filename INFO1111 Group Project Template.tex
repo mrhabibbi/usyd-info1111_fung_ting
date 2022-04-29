@@ -1,0 +1,406 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+\usepackage[english]{babel}
+\usepackage{apacite}
+
+\geometry{ margin=30mm }
+\counterwithin{subsection}{section}
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\usepackage{tocloft}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftsecindent}{2.2em}
+\setlength{\cftsubsecindent}{4.2em}
+\setlength{\cftsecnumwidth}{2em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+
+
+\begin{document}
+\titleformat{\section}
+{\normalfont\fontsize{15}{0}\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+\titleformat{\subsection}
+{\normalfont\fontsize{13}{0}\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing{\section}{0cm}{0.5cm}{0.15cm}
+
+%=======================================================================================
+
+\begin{titlepage}
+\center 
+\textbf{\huge INFO1111: Computing 1A Professionalism}\\[0.75cm]
+\textbf{\huge 2022 Semester 1}\\[2cm]
+\textbf{\huge Practice: Team Project Report}\\[3cm]
+
+\textbf{\huge Submission number: 1}\\[0.75cm]
+\textbf{\huge Team Members:}\\[0.75cm]
+\textbf{\large
+    \begin{tabular}{|p{0.5\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|}
+        \hline
+        Name & Student ID & Levels being attempted in this submission\\
+        \hline
+        Anthony Fung & 520437294 & 1, 2  \\
+        Taylor Pan & 520431085 & 1 \\
+        Benan Nagshabandi & 510622767 & 1, 2 \\
+        \hline
+    \end{tabular}
+}\\[0.75cm]
+\end{titlepage}
+
+%=======================================================================================
+
+\tableofcontents
+
+%=======================================================================================
+
+\newpage
+\section*{General Instructions}
+
+You should use this \LaTeX\ template to generate your team project report. Keep in mind the following key points:
+\begin{itemize}
+    \item When we assess your report, you are not given a mark. Instead we will indicate (separately, for each team member) whether each level is ''achieved''.
+    \item In order to pass the unit, you must achieve at least level 1. 
+    \item In order to achieve level 2, you must first have achieved level 1, and so on for each level up to level 4. This means that we will not assess a higher level until a lower level has been achieved (though we will review one level higher and give you feedback to help you in refining your work).
+    \item Some parts of the report are completed as a team and other parts require each student to complete a different section. This means that for each submission, some members of the team may have completed their work for a given section, but other members may not. It also is therefore possible that some members of the team may achieve a specified level and other members of the team may not yet have achieved that level.
+    \item Even if some members are completing their material for a given level, and others are not, your team members will still need to work together to edit and compile the report.  The only exception to this is where a member of the team has already achieved the level they are targeting in a previous submission and has decided to not attempt higher levels, and so is not contributing any further (this should be obvious because no level is indicated for that student on the cover page).
+    \item When completing each section you should remove the explanation text and replace it with your material.
+\end{itemize}
+
+For each submission you will add new details to this report, and/or update previous sections (where previous work was not good enough to have achieved the relevant level). In particular:
+
+\begin{itemize}
+    \item \textbf{General:} For each submission, each student can attempt up to 2 levels. You must also successfully achieve each lower level before you can be assessed at a higher level. For example, in the first submission you might attempt only level 1, but not be successful in achieving that level. You then reattempt level 1 and add in level 2 in the second submission and are successful in achieving level 1 but not level 2. For the third and final submission you could then attempt level 2, or levels 2 and 3 - or even just choose to not submit anything further and remain at level 1).
+    \item \textbf{Submission 1:} You should complete at least the material for level 1 (since achieving level 1 is required to pass the unit). Each member of the team can also optionally choose to complete the material for level 2.\\
+    \textit{Note 1: If you do not complete the level 2 information then you obviously cannot achieve level 2 at this stage. This does not stop you from attempting level 2 in Deliverable 2 or 3, but it will make it more difficult to achieve the higher levels later in the semester.}
+    \textit{Note 2: To be able to achieve Level 1 in submission one your team has to achieve level 1 in the group component (Section 1.1) and you have to achieve Level 1 in the individual component (i.e. your assigned section 1.2, 1.3, 1.4 or 1.5)}
+    \item \textbf{Submission 2:} Each member of your team will complete additional sections, but because you are submitting a single document, you need to work together to compile your results together and generate the final submission.\\
+    If you did not achieve level 1 in your first submission, then you should revise the material for level 1 based on the feedback, and optionally you can also complete level 2.\\
+    If you achieved level 1 in your first submission, then each team member can optionally complete the material for levels 2 and 3.
+    \textit{Note: If you do not achieve level 1 with this submission then the highest level you will be able to achieve in the final submission will be level 2. If you achieve level 1, but not level 2, with this submission then the highest level you will be able to achieve with the final submission is level 3.}
+    \item \textbf{Submission 3:} Again, you can correct sections where you did not achieve the specified level in the previous submission, and you complete additional sections.\\
+    If you still have not achieved level 1, then you should revise the material for level 1 based on the feedback, and again optionally you can also complete level 2.\\
+    For those at level 1, you can choose to complete the material for levels 2 and 3.\\
+    For those at level 2, you can choose to complete the material for levels 3 and 4.\\
+    For those at level 3, you can choose to complete the material for level 4.
+\end{itemize}
+
+Whilst the team project is just that -- a team project -- it has been designed to also allow different members of the team to achieve different outcomes. We do expect you to work together as a team. If you do come across problems working together then the first step should be to discuss this with your tutor. Note: If you are having problems you should approach your tutor as soon as you can to make them aware of the difficulties you are having with your team.
+
+Finally, you should also ensure that any resources you use are suitably referenced, and references are included into the reference list at the end of this document. You should use APA 6th reference style \cite{apa6}.
+
+%=======================================================================================
+
+\newpage
+\section{Level 1: Basic Skills}
+
+Level 1 focuses on basic technical skills (related to \LaTeX\ and Git) and the types of skills used in different computing jobs.
+
+\subsection{Developing industry skills}
+
+\indent\indent\textbf{1. Critical thinking/problem solving:}
+\par Critical thinking/problem solving is the core of computing. In computing, programmers translate our everyday language into a language that a computer would understand and solve that problem. As problem solving skills get better for the computing graduate/programmer, they would be more exposed to different types of problems and patterns start to emerge for the programmer to realise. As their problem solving skill gets better, their approach to solving problems will naturally get better and eventually be able to solve complex problems that may arise from programming.Being able to critically think bolsters one’s problem solving skills, being able to analyse and break down parts of the problem and whittle the problem down one  by one. This eventually gets to a point where critical thinking becomes second nature to a programmer and comes hand in hand with problem solving. Hence that is why in order to under take continual learning and constantly improve, the individual will need to possess great problem solving skills.
+
+\bigskip
+
+\textbf{2. Communication:}
+\par In order to achieve a positive outcome from continual learning, one must learn to expand upon their communication skills. Communication is a vital skill to improve in the workplace as it disseminates the information needed by employees to perform tasks, in addition to building further relationships of trust and commitment. Workplace communication can also decrease the effect of absenteeism and turnover rates, as an employee receiving a positive communication flow from their superior can lead to increased amounts of trust and loyalty. An employee with the ability to freely express their thoughts to their co-workers and superiors is also much more likely to perform with greater effort. Through this, the individual is able to clearly articulate their thoughts and hence problems, and reach out for help, and by constantly doing this they can keep learning and fixing their mistakes through seeking external help. That is why communication is a key part of self development in continual learning.
+
+\bigskip
+
+\textbf{3. Decision making:}
+\par Decision-making is an important trait to have and to continually improve, it allows for individuals to create mindful opportunities in the circumstance they are put in, in order to decisively select the best possible outcome. There are multiple types of decision making: Command, Collaborative, Consensus-based, Vote and Delegation decision-making. Depending on the status of the employee within the workplace, if teamwork is prioritised, collaborative or vote decision-making would be most beneficial as it allows for interpersonal discussion about the task at hand before a final decision is make, whereas command decision-making is an independent route where one might require this skill to take on a large personal project. Through a combination of these decision-making skills the individual is able to effectively and efficiently determine a solution to a problem generating the best possible outcome which will greatly help with achieving an individual's goals efficiently. By incorporating this skill to daily life the individual is able to possess an ability to save time in order to learn as much as possible, hence contributing greatly to one's ability to self develop.
+
+\bigskip
+
+\textbf{4. Research Skills:}
+\par Our human minds are only capable of storing so much information while the internet can hold an infinite amount of information. Having good research skills mitigates this consequence of our human minds. The internet can have a lot of poor information, but as much bad information there is, there is an equal amount or even more good information on the internet. Studying computing will take lots of time, and with that time will come mistakes and bugs in programs. Being able to research the correct question will make one’s learning experience much more graceful and less stressful as most likely, the answer to the bugs. With better research skills, questions can be answered as soon as they arise and due to the ever-changing industry, being knowledgeable of what to research will be a massive benefit for any programmer/computing degree graduate to have and to continue their journey of constantly improving and adding onto their knowledge of programming.
+
+\bigskip
+
+\textbf{5. Integrity:}
+\par In the industry field, integrity is a vital skill an individual must yield in order to thrive. Integrity is often portrayed as honesty, however in the industry field it is much more than that. The integrity of a programmer is vital for their development as well as the company's development. A programmer should have the integrity of drafting their own works, reviewing and applying it. In turn, the company should also have integrity by assuring that their work is built on a foundation of integrity. Integrity between employees is also essential in order to excel in teamwork based projects, benefiting both the employees and the company. By having integrity, the individual will be able to lead themselves onto the right path for continual learning as they can identity what is necessary and what isn't according to their individual needs, hence integrity is a great skill to incorporate into daily life.
+
+
+\subsection{Skills: Taylor Pan : Computer Science}
+
+\indent\indent\textbf{Problem Solving Skills:}
+\par Problem solving skills would be very important when graduating with a CS Major. This would be because in the world of programming, being able to think logically would be a great benefit in translating our human language into the computer. Problem solving skills also then transition into mathematics, which is also very important in CS. Having good problem solving skills also translates into good debugging skills where the better the skills, the faster one could detect problems in a program. 
+
+\bigskip
+
+\textbf{Mathematics:}
+\par Mathematics is an important skill in the field of CS as math is essentially used everywhere, especially so in CS. For example, in game development, anything that interacts with another thing will require mathematics, being able to move objects on the x and y axis. Another reason why math is important in CS is that many functions and operators in all programming languages require knowledge in mathematics to utilise. The opposite is also true where programming can be used to solve mathematical problems so the two go hand in hand together.
+
+\bigskip
+
+\textbf{Teamwork:}
+\par Being able to work in a team is another skill that would be required by employers. This is because in most programming jobs, it’s a team based environment where different minds come together and solve a problem together. Being able to collaborate and open to new ideas is really important as potential solutions that otherwise wouldn’t  have been able to arise if not for working in teams and collaborating. 
+
+\bigbreak 
+
+\textbf{Creativity:}
+\par Creativity comes into play in many CS jobs as creativity is usually what is the key to solving problems and creating logical  code that elegantly flows together. Being able to think outside the box will enable for more ideas to come into the programmer's head. Creativity also allows for the programmer to approach problems at different angles which would result in different solutions for one problem. 
+
+\bigskip
+
+\textbf{Time Management:}
+\par CS will have many jobs that have tight deadlines that the employee must adhere to. Being able to effectively manage time is a great skill to keep on top of the different projects and tasks required to be done by the deadline. This could be because another department might require a finished product to start their part, or that something needs to be submitted for launch day etc. 
+
+\bigskip
+
+\textbf{Flexible with multiple languages:}
+\par Being able to switch between multiple languages is a useful skill as different softwares requires different languages of code. Different departments would be using different languages as well as different softwares so being able to read multiple languages would be useful as it allows for one to jump from different projects really quickly. 
+
+\bigskip
+
+\textbf{Critical Thinking:}
+\par Being able to attack a problem with proper analysis and creating an effective solution would be a valuable skill for a CS major to have. This allows for a solution to a problem to be formulated really quickly and for problems to be whittled down much more effectively if one is able to critically think, analyze and create a logical problem. 
+
+\bigskip
+
+\textbf{Self-Awareness:}
+\par Staying humble and being self aware is an important trait to have in CS. Being self-aware is important for a CS major to realise their mistakes and grow from their mistakes. This allows for self progression as being self-aware of one's own mistakes will benefit them by stopping them from making the same mistake again and growing as a person and a programmer. 
+
+\subsection{Skills: Benan Nagshabandi : Data Science}
+
+\indent\indent\textbf{Data visualisation and wrangling:}
+\par The ability to visualize and implement data is pertinent skills in the field of data science. When gathering data, what makes understanding it much easier is the ability to understand the data and break it down into relevant points. This is where data wrangling can be seen as an essential skill for a data scientist, much like data cleaning it aims towards a more appropriate data set as an outcome. However,  data wrangling focuses much more on changing the format of raw data, into a more usable and accessible form, while data cleaning removes erroneous data from a set. Data wrangling is essentially an expansion of data cleaning, which is a valuable skill. A skilled data scientist working for a business should be able to take 5 raw data sets and merge them into 1, for example, allocating details of an employee all under one dataset.
+
+\bigskip
+
+\textbf{Creativity:}
+\par When dealing with data, one must have the creative abilities in order to portray in its best form. Different types of data may call for different graphs implemented. Such as two quantitative variables, in which a scatter plot or histogram would be appropriate, both of which give different perspectives into the data such as its regression and how it skews. In addition, a data scientist must have skills of how to think outside the box and have the creativity to choose how to present each data set. Even though a bar plot may be the more logically appropriate graph, one may opt to use a scatter plot as the data may be presented more accurately.
+
+\bigskip
+
+\textbf{Teamwork and communication skills:}
+\par Teamwork and communication skills go hand in hand, especially in a field as vast as data science. When handed large amounts of data is it far more effective to have the workloads split up between roles. Such as having one team member deal with wrangling the data, while the others deal with visualization and graphing.  Communicating which team member is most effective and performing which task is also another important factor in assignment work where teamwork is allowed. Communication is also useful for presenting the data after it has been properly handled, a data scientist should be able to explain what happened in each stage of their progress even though they did not work on that part specifically.
+
+\bigskip
+
+\textbf{Programming:}
+\par A data scientist should have knowledge of various programming languages, especially ones relevant to data science such as SQL (Structured Query Language), Python and R-Studio. Each program has its specific uses, for example, SQL handles large amounts of data,allows users to execute queries in databases,update and delete records more easily and set permissions on tables and views. Creating graphs isn't as easy as they are on R-studio, hence upon wrangling the data on SQL one can easily transfer the updated data to R-studio and create a visually pleasing and accurate graph. Python can be used for the easiest form of user interaction and data collection, as using built-in functions are effective in collecting and storing data in variables. A combined use of the few programs can render an excellent form of work by a data scientist.
+
+\bigskip
+
+\textbf{Big data:}
+\par A specific application of data science, big data is known for having enormous sets of data, and with these come forth with logistical challenges in order to deal with them. A primary concern is knowing how to efficiently store, process, analyze and capture  vast data sets. A primary component of big data is an element known as the 3 V’s Model, which stand for volume, caretiyl and velocity, these represent the main challenges a data scientist may face when dealing with big data. Some companies also add veracity and variability into the mix, however this depends on the type of data that is being tackled and time constraints. A data scientist should know the Three V’s Model in order to properly tackle big data, which is often gathered from geolocations, software applications and multimedia devices.
+
+\bigskip
+
+\textbf{Machine learning :}
+\par Another core skill for a data scientist to have is machine learning. In short, machine learning is used to build predictive models by analyzing vast amounts of data and trends. A formidable predictive software can be implemented to predict future data based on the past. A data scientist should be able to know how to create or use machine learning softwares in order to succeed in the field of data science. The base of machine learning comes in the form of linear and regression models, from there on can expand upon them to create more softisitaced softwares of machine learning such as Random Forest and XGboost. Understanding machine learning can help a data scientist become more effective in their depth of field.
+
+\bigskip
+
+\textbf{Deep learning:}
+\par Deep learning is a type of machine learning by definition, however due to its level of complication it is often seen as a separate system in and of its own. Deep learning creates multiple complicated layers used for processing that is advanced to the degree that it's often comparable to the human brain. An advantage of deep learning is that it can process both unlabeled and unstructured data in a short amount of time compared to a human. An individual graduating with a major of data science might even need a few years in practice in order to understand how to operate a deep learning machine program. This is because deep learning is often achieved through transfer learning, which takes data from a preexisting network. Oftentimes, it is easier when a data scientist programs a deep learning machine themselves, as the data collected from transfer learning would be their own work, hence their deep learning machine adapts to them effectively doubling their work output.
+\bigskip
+
+\textbf{Real World Knowledge:}
+\par Often related with business, data science requires a significant amount of real world knowledge in order for an individual to succeed. Real world knowledge can be used in data science to assist an individual predict and understand their work. For example, using algorithms, technology and statistics, a data scientist can effectively predict the health of a company by analyzing trends in the real world, such as how popular the company is or what factors is the company prone to. Knowing these factors helps a data scientist estimate trends and gain trustworthy data, if real world knowledge is paired up with deep learning, a data scientist can estimate the outcome of a company's sales for several months in the future, and it is often accurate.
+
+
+\subsection{Skills: Anthony Fung : Software Development}
+\indent\indent\textbf{Coding / Programming Skills:}
+\par The most obvious industrial skill necessary for a successful software developer, being able to create a program from scratch using foundational coding knowledge is a requirement.During this age where the demand for higher functioning smart phones and tablets exists, having foundational knowledge covering a wide range of software, e.g. mobile phones (iOS, Android), computers (macOS, Linux, Windows), will be extremely beneficial in the workforce, and making it easier for employers to hire you due to having a wider range of skills.
+
+\bigskip
+
+\textbf{Object Oriented Programming (OOP):}
+\par Object-oriented Programming encompasses four key principles which are fundamental to coding especially in Java, C++ and Python, which dictates the style of coding being use. OOP is a modern form of coding and has popularised the use of classes containing data and functions rather than the tradition `top-down' method. The key principles are:
+\begin{itemize}
+\itemsep0em
+	\item Abstraction: only `show' internal mechanisms relevant to function of the object, and `hide' unnecessary details e.g. internal motherboard hidden inside phone
+	\item Encapsulation: bundling data and information under a single unit, preventing direct access from pubic users when necessary e.g. usernames and passwords hidden from public
+	\item Inheritance: a hierarchy of classes that share similar attributes and methods e.g. dog class is under the animal class
+	\item Polymorphism: the ability of a message to be displayed in more than one form e.g. cursor can take a shape of an arrow or hand 
+\end{itemize}
+Having knowledge on these four cornerstones is key to being employable, as employees place a substantial amount of importance on this. It is almost a guarantee to be asked about OOP as it represents the foundation of programming, making it a powerful tool to posses.
+
+\bigskip
+
+\textbf{Organisational and Time Management:}
+\par Research shows that with time management enhancement, so does job performance, academic achievement and wellbeing. Time management and organisational skills are defined as the process of planning and organising how your time is divided between different activities. With great time management skills an individual is able to complete obligatory tasks within the desired timeframe. Compared to an individual who does not plan their events, completing certain tasks at random, resulting in a build up of work and stress and likely to not success a certain task by the required date. Because software developers are often given group projects where work is divided between the members, having exceptional organisational skills will allow for good time management where the individual can set certain goals in order to complete a certain task. This will save the group any troubles, as prioritising your time is important in the workplace as a software developer.
+
+\bigskip
+
+\textbf{Problem Solving and Logical Thinking:}
+\par This is a very important skill required for all programmers as problems will occur without any solution, but through collaborative problem solving and logical thinking it is possible to work as a team and provide the most correct solution. This skill is a key part of independence and teamwork, whatever the project you are assigned there ought to be errors in your program, which requires extensive testing and debugging. This requires exceptional problem solving aptitude as pinpointing the error as a software developer may be exhausting. By having a logical though process you can more easily run through the code and spot mistakes that break the logic of your programming language. Thus it is important to understand the circumstances and logically and critically act on each situation whether it is faulty code from an individual or group project.
+
+\bigskip
+
+\textbf{Teamwork Skills:}
+\par Teamwork skills is important due to the nature of the workforce where individuals are required to collaborate in a competitive environment. By being socially ept and able to communicate there is great possibility to combine these skills and create a bonding moment with colleagues, this allows for leadership to take place and naturally allow for more productive brainstorming and effective collaboration. This is important for programmers who are constantly in group projects or working for major tech companies who require bug fixes on a daily.
+
+\bigskip
+
+\textbf{Mathematical Aptitude:}
+\par Mathematical aptitude is defined as the natural ability for individuals to grasp new mathematical concepts and calculating solutions to mathematical problems with ease. With this trait, individuals are able to distinguish themselves from the software development industry with higher chances of being employed. In a practical sense, having this skill will naturally come with logical thinking due to the mathematical nature of the individuals brain operations, and will overlap directly to any language of programming. As having a strong mathematical background will greatly benefit your ability to logically process and produce code whilst constantly testing and debugging. As a software developer it is a must to have a great mathematical aptitude, to understand simple algorithms and applying mathematical skills to solve complex computing problems.
+
+\bigskip
+
+\textbf{Self-development Skills:}
+\par Self-development skills is defined as the continual change in an individuals behaviour along side the change in trends within society. Being able to socially calibrate yourself is a major part of software development, as new technology comes out there is less and less niches, and through a continual adaptation to society's trends it is possible to find new niches in the society. Combined with your programming skills the sky is the limit as anything is possible digitally. There are many software developers who lack this practical skill and in turn is holding them back from progressing in the workforce. 
+
+\bigskip
+
+\textbf{Accuracy and attention to detail:}
+\par This particular skill is designed to allow individuals to excel in the work environment where simple errors cannot be permitted, in a very competitive environment with millions of competitors, one small mistake can set you back miles. In a practical sense, attention to detail will allow the individual to identify the right questions to ask and combined with critical thinking, the right solutions can be provided. Having great attention to detail as a software developer is important in programming as small errors may be thing preventing the program from doing said function or compiling etc. Hence this skill should be a given for individuals entering the software development industry.
+
+
+\subsection{Skills: add student 4 name here : Cyber Security}
+
+Your text goes here
+
+
+%=======================================================================================
+
+\newpage
+\section{Level 2: Basic Technology}
+
+Level 2 focuses on initial evaluation of the tech stack that is used by a selected company. All companies make use of a range of technologies, and these technologies need to work together. A tech stack is basically just this collection of technologies that collectively enable a company's systems. As an example, one of the most common technology stacks for supporting web servers is LAMP: Linux as the underlying operating system; Apache as a web server; MySQL as the supporting database; and Perl (or more recently PHP or Python) as the programming language.
+
+Each student should choose a different tech stack and explain the role of each of the different technologies in that stack. Note that prior to researching your proposed tech stack and spending time writing about it, it might be a good idea to check with your tutor as to whether your chosen stack is suitable. (Target = $\sim$200-400 words per student).
+
+\subsection{Microsoft Azure: Benan Nagshabandi}
+\par Deep learning is a type of machine learning by definition, however due to its level of complication it is often seen as a separate system in and of its own. Deep learning creates multiple complicated layers used for processing that is advanced to the degree that it's often comparable to the human brain. An advantage of deep learning is that it can process both unlabeled and unstructured data in a short amount of time compared to a human. An individual graduating with a major of data science might even need a few years in practice in order to understand how to operate a deep learning machine program. This is because deep learning is often achieved through transfer learning, which takes data from a preexisting network. Oftentimes, it is easier when a data scientist programs a deep learning machine themselves, as the data collected from transfer learning would be their own work, hence their deep learning machine adapts to them effectively doubling their work output.
+
+\subsection{LAMP: Anthony Fung}
+
+\par LAMP stands for Linux, Apache, MySQL and PHP, and this combined technology stack is used for database-driven, dynamic websites. Each specific component represents an essential part of web development:
+
+\begin{itemize}
+\itemsep0em
+	\item Linux: is the operating system (OS) used to run the components below in an optimised manner
+	\item Apache: is a web server software used to run static web pages, where its role is to process and transmit information through the internet using HTTP
+	\item MySQL: is a relational database management system used to create and manage web databases, and due to its cross-platform functionality it allows for an advantage over other database systems
+	\item PHP, Perl or Python: stands for Hypertext Preprocessor, is the programming language used for web development, it combines all elements of LAMP to make it run efficiently. LAMP supports 3 languages making it a dynamic tool for creating successful applications
+\end{itemize}
+
+LAMP takes credit for being one of the first open-source software technology stacks used for developing web applications, and also one of the most common methods used nowadays. Because of its popularity it used by 80\% of all web pages found on the internet, including Facebook during its early stages, WordPress, Wikipedia, Tumblr and much more. Because this technology stack uses PHP there are low barriers to entry, hence can result in many programming flaws resulting in low quality PHP code and fundamentally lowering the reputation of LAMP. However one of LAMP's drawback includes its reliance on a particular OS, whereas MEAN does not depend on a singular OS. 
+
+
+\subsection{Tech Stack: add student 3 name here}
+
+Your text goes here
+
+\subsection{Tech Stack: add student 4 name here}
+
+Your text goes here
+
+
+%=======================================================================================
+
+\newpage
+\section{Level 3: Advanced Skills}
+
+Level 3 focuses on more advanced technical skills (\LaTeX\ and Git) and analysis of linkages and relationships between the items in the company tech stack.
+
+The following is a list of advanced Git and \LaTeX\ skills/features. Each student should select one pair of items from each list and demonstrate actual use of each item (either through activity in Git, or through including items in this report). (Target = $\sim$100 words per student for each feature).
+\begin{itemize}
+    \item Git
+    \begin{itemize}
+        \item Rebasing and Ignoring files
+        \item Forking and Special files
+        \item Resetting and Tags
+        \item Reverting and Automated merges
+        \item Hooks and Tags
+    \end{itemize}
+    \item \LaTeX\ 
+    \begin{itemize}
+        \item Cross-referencing and Custom commands
+        \item Footnotes/margin notes and creating new environments
+        \item Floating figures and editing style sheets
+        \item Graphics and advanced mathematical equations
+        \item Macros and hyperlinks
+    \end{itemize}
+\end{itemize}
+
+\subsection{Advanced features: add student 1 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 2 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 3 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+\subsection{Advanced features: add student 4 name here}
+
+Explain your use of the advanced Git and \LaTeX\ features. 
+
+
+
+%=======================================================================================
+
+\newpage
+\section{Level 4: Advanced Knowledge}
+
+Level 4 focuses on analysing your particular tech stack and considering alternatives. Each student should consider the tech stack they described for Level 2, and then discuss each of the following points:
+\begin{itemize}
+    \item What are the strengths and limitations of this stack? (Target = $\sim$200 words).
+    \item What alternatives exist, and under what situations might these alternatives be a better choice? (Target = $\sim$200 words).
+\end{itemize}
+
+\subsection{Advanced Knowledge: add student 1 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 2 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 3 name here}
+
+Your text goes here
+
+\subsection{Advanced Knowledge: add student 4 name here}
+
+Your text goes here
+
+
+
+%=======================================================================================
+
+\newpage
+
+\bibliographystyle{apacite}
+\bibliography{main}
+
+\section{Bibliography}
+
+\hangindent=1cm Dewani, R. (2020). 14 Skills Required To Become A Data Scientist in 2020. Retrieved from https://www.analyticsvidhya.com/blog/2020/11/14-must-have-skills-to-become-a-data-scientist-with-resources/ 
+
+\bigskip
+
+\hangindent=1cm Gills, A. (n.d.). object-oriented programming (OOP). TechTarget. Retrieved from https://www.techtarget.com/searchapparchitecture/definition/object-oriented-programming-OOP
+
+\bigskip
+
+\hangindent=1cm Google Analytics. (n.d.). Enlyft.com. Retrieved from https://enlyft.com/tech/products/google-analytics
+
+\bigskip
+
+\hangindent=1cm Target. (n.d.). Software developer: job description. Target Jobs. Retrieved from https://targetjobs.co.uk/careers-advice/job-descriptions/software-developer-job-description
+
+\bigskip
+
+\hangindent=1cm Top 6 Essential Skills for Data Scientist. (2017, August 31). Simplilearn.com. Retrieved from https://www.simplilearn.com/what-skills-do-i-need-to-become-a-data-scientist-article/amp
+
+\bigskip
+
+\hangindent=1cm Vadapalli, P. (2021). Top 10 Skills For Every Computer Science Professional in 2022 | upGrad blog. Retrieved from https://www.upgrad.com/blog/skills-for-every-computer-science-professional/ 
+
+
+\end{document}
+\end{report}
